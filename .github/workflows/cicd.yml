@@ -22,9 +22,15 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v2
-    - name: Build, tag, and push Docker image
+    - name: Build and tag
       run: |
         aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/k5u0o7b3
         docker build -t pacman ./pacman/docker
         docker tag pacman:latest public.ecr.aws/k5u0o7b3/pacman:latest
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: push to ECR
+    - run: |
         docker push public.ecr.aws/k5u0o7b3/pacman:latest
+        
