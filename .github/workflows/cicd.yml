@@ -31,6 +31,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: push to ECR
-    - run: |
+      run: |
         docker push public.ecr.aws/k5u0o7b3/pacman:latest
         
