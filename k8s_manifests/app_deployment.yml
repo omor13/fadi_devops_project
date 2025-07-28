@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pacman-app
+  labels:
+    app: pacman
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pacman
+  template:
+    metadata:
+      labels:
+        app: pacman
+    spec:
+      containers:
+      - name: pacman
+        image: public.ecr.aws/k5u0o7b3/pacman:latest
+        ports:
+        - containerPort: 8080
