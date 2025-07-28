@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  CI_CD:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,4 +28,11 @@ jobs:
         docker build -t pacman ./pacman/docker
         docker tag pacman:latest public.ecr.aws/k5u0o7b3/pacman:latest
         docker push public.ecr.aws/k5u0o7b3/pacman:latest
+    - name: Deploy to EKS
+      run: |
+        kubectl apply -f k8s_manifests/app_deployment.yml
+        kubectl apply -f k8s_manifests/app_svc.yml
+        kubectl rollout status deployment/pacman-app
+        kubectl get svc pacman-service -o wide
+      
         
