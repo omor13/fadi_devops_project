@@ -1,4 +1,4 @@
-var service_host = 'localhost'
+var service_host = 'mongo.default.svc.cluster.local'
 var auth_details = ''
 var mongo_database = 'pacman'
 var mongo_port = '27017'
