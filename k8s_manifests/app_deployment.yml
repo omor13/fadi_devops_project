@@ -19,3 +19,18 @@ spec:
         image: public.ecr.aws/k5u0o7b3/pacman:latest
         ports:
         - containerPort: 8080
+        env:
+        - name: MONGO_SERVICE_HOST
+          value: "mongo"
+        - name: MONGO_DATABASE
+          value: "pacman"
+        - name: MY_MONGO_PORT
+          value: "27017"
+        - name: MONGO_USE_SSL
+          value: "false"
+        - name: MONGO_VALIDATE_SSL
+          value: "true"
+        - name: MONGO_AUTH_USER
+          value: "mongo-user"
+        - name: MONGO_AUTH_PWD
+          value: "P@$$w0rd1234"
