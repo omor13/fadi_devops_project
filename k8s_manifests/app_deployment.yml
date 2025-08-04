@@ -29,10 +29,6 @@ spec:
         - name: MONGO_USE_SSL
           value: "false"
         - name: MONGO_VALIDATE_SSL
-          value: "true"
-        - name: MONGO_AUTH_USER
-          value: "mongouser"
-        - name: MONGO_AUTH_PWD
-          value: "Pa$$w0rd12345"
+          value: "false"
         - name: MONGO_URL
           value: "mongodb://mongo:27017/pacman"
