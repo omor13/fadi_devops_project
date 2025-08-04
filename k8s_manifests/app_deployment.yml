@@ -31,6 +31,6 @@ spec:
         - name: MONGO_VALIDATE_SSL
           value: "true"
         - name: MONGO_AUTH_USER
-          value: "mongo-user"
+          value: "mongouser"
         - name: MONGO_AUTH_PWD
-          value: "P@$$w0rd12345"
+          value: "Pa$$w0rd12345"
