@@ -45,7 +45,7 @@ for (let i=0; i<hosts.length;i++) {
 connection_details = connection_details.replace(/,\s*$/, "");
 
 var database = {
-    url: `mongodb://${auth_details}${connection_details}/${mongo_database}`,
+    url: `mongodb://${auth_details}${connection_details}/${mongo_database}?authSource=admin`,
     options: {
         readPreference: 'secondaryPreferred'
     }

@@ -24,6 +24,13 @@ spec:
         volumeMounts:
         - name: mongo-persistent-storage
           mountPath: /data/db
+          script: |
+            #!/bin/bash
+            mongo
+            use admin
+            db.addUser("mongouser", "Pa$$w0rd12345")
+            use pacman
+            db.addUser("mongouser", "Pa$$w0rd12345", { roles: [ { role: "readWrite", db: "pacman" } ] })
   volumeClaimTemplates:
   - metadata:
       name: mongo-persistent-storage
