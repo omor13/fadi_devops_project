@@ -31,10 +31,11 @@ jobs:
     - name: Deploy to EKS
       run: |
         aws eks --region us-west-2 update-kubeconfig --name fadi-cluster
-        kubectl apply -f k8s_manifests/app_deployment.yml
-        kubectl apply -f k8s_manifests/app_svc.yml
-        kubectl rollout status deployment/pacman-app
-        kubectl get svc pacman-service -o wide
+        kubectl apply -f k8s_manifests/sc.yml
         kubectl apply -f k8s_manifests/db_deployment.yml
         kubectl apply -f k8s_manifests/db_svc.yml
         kubectl rollout status statefulset/mongo
+        kubectl apply -f k8s_manifests/app_deployment.yml
+        kubectl apply -f k8s_manifests/app_svc.yml
+        kubectl rollout status deployment/pacman-app
+        kubectl get svc pacman -o wide
