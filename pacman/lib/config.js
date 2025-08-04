@@ -1,4 +1,4 @@
-var service_host = 'mongo-service'
+var service_host = 'local'
 var auth_details = ''
 var mongo_database = 'pacman'
 var mongo_port = '27017'
