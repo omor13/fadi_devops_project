@@ -24,7 +24,7 @@ spec:
         volumeMounts:
         - name: mongo-persistent-storage
           mountPath: /data/db
-  volumeClaimTemplates:
+`  volumeClaimTemplates:
   - metadata:
       name: mongo-persistent-storage
     spec:
