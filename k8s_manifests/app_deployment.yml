@@ -33,4 +33,4 @@ spec:
         - name: MONGO_AUTH_USER
           value: "mongo-user"
         - name: MONGO_AUTH_PWD
-          value: "P@$$w0rd1234"
+          value: "P@$$w0rd12345"
